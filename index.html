@@ -3,139 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pro-Hub Matériaux V6</title>
+<title>Materials Engineering Portal — V7 PRO</title>
 <style>
 :root {
-  --bg:#090b10; --surface:#11141b; --border:#222834;
-  --green:#5af2b0; --gold:#f7b731; --blue:#4dabff;
-  --text:#e2e8f0; --muted:#848da4;
+  --bg:#080a0f; --surface:#11151f; --border:#232936;
+  --green:#5af2b0; --gold:#f7b731; --blue:#4dabff; --red:#ff5e5e;
+  --text:#e2e8f0; --muted:#8a94a8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:system-ui, -apple-system, sans-serif;padding-bottom:80px; font-size:13px}
-.wrap{max-width:1400px;margin:0 auto;padding:0 20px}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI', Roboto, Helvetica, sans-serif;padding-bottom:100px; font-size:13px}
+.wrap{max-width:1450px;margin:0 auto;padding:0 25px}
 
-header{padding:25px 0; border-bottom:1px solid var(--border); margin-bottom:20px}
-h1{font-size:22px; font-weight:800}
+header{padding:30px 0; border-bottom:1px solid var(--border); margin-bottom:25px; display:flex; justify-content:space-between; align-items:flex-end}
+h1{font-size:24px; font-weight:800; letter-spacing:-0.5px}
 h1 span{color:var(--green)}
 
-.section-title{display:flex; align-items:center; gap:10px; margin:30px 0 15px; font-size:10px; text-transform:uppercase; letter-spacing:1.5px; color:var(--green); font-weight:700}
+.section-title{display:flex; align-items:center; gap:12px; margin:35px 0 15px; font-size:10px; text-transform:uppercase; letter-spacing:2px; color:var(--green); font-weight:700}
 .section-title::after{content:''; flex:1; height:1px; background:var(--border)}
 
-.grid{display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:10px}
+.grid{display:grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap:12px}
 
-.card{background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:15px; transition:0.2s; display:flex; flex-direction:column}
-.card:hover{border-color:var(--green); background:#161a24}
-.card h3{font-size:14px; margin-bottom:4px; color:#fff}
-.card p{font-size:11px; color:var(--muted); line-height:1.4; margin-bottom:12px}
-.loc{font-size:9px; color:var(--gold); font-weight:700; margin-bottom:5px; text-transform:uppercase}
+.card{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:15px; transition:0.2s; display:flex; flex-direction:column; height:100%}
+.card:hover{border-color:var(--green); background:#171d29; transform:translateY(-3px)}
+.card h3{font-size:14px; margin-bottom:6px; color:#fff; font-weight:700}
+.card p{font-size:11px; color:var(--muted); line-height:1.4; margin-bottom:15px; flex-grow:1}
+.loc{font-size:9px; color:var(--gold); font-weight:800; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px}
 
-.btn{display:block; text-align:center; background:rgba(255,255,255,0.03); border:1px solid var(--border); color:var(--text); padding:7px; border-radius:4px; font-size:10px; text-decoration:none; font-weight:600}
-.btn:hover{background:var(--green); color:#000; border-color:var(--green)}
-.tag{font-size:9px; background:rgba(90,242,176,0.1); color:var(--green); padding:2px 5px; border-radius:3px; margin-top:5px; align-self: flex-start}
+.btn{display:block; text-align:center; background:rgba(90,242,176,0.05); border:1px solid rgba(90,242,176,0.2); color:var(--green); padding:8px; border-radius:4px; font-size:10px; text-decoration:none; font-weight:700; transition:0.2s}
+.btn:hover{background:var(--green); color:#000}
+.btn.external{color:var(--blue); border-color:rgba(77,171,255,0.3); background:rgba(77,171,255,0.05)}
+.btn.external:hover{background:var(--blue); color:#000}
+
+.tag-group{display:flex; gap:4px; margin-top:10px}
+.tag{font-size:8px; padding:2px 5px; border-radius:3px; background:var(--border); color:var(--muted)}
 </style>
 </head>
 <body>
 
 <div class="wrap">
   <header>
-    <h1>Swiss<span>Materials</span> Hub V6</h1>
-    <div style="font-size:11px; color:var(--muted)">Plateforme consolidée — Horlogerie & Industrie Romande</div>
+    <div>
+      <h1>Swiss<span>Materials</span> V7.0</h1>
+      <p style="color:var(--muted); margin-top:5px">Base consolidée : Horlogerie, Microtechnique & Laboratoires</p>
+    </div>
+    <div style="text-align:right">
+      <a href="https://www.jobwatch.ch/fr/" target="_blank" class="btn external" style="display:inline-block">Accès Job Watch ↗</a>
+    </div>
   </header>
 
-  <!-- RECHERCHE GENERIQUE -->
-  <div class="section-title">Recherche Emploi (Moteurs)</div>
+  <!-- MOTEURS SPECIALISÉS -->
+  <div class="section-title">Veille Emploi Ciblée</div>
   <div class="grid">
     <div class="card">
-      <h3>Multi-Portails Romandie</h3>
-      <p>Mots-clés: Ingénieur Matériaux, R&D, Sustainable, Projets.</p>
-      <div style="display:grid; gap:6px">
-        <a href="https://www.jobup.ch/fr/emplois/?term=Ingenieur+Materiaux&regionName=Genève,Vaud,Neuchâtel,Fribourg,Jura,Berne" target="_blank" class="btn">Jobup (GE/VD/NE/JU/BE/FR)</a>
-        <a href="https://www.linkedin.com/jobs/search/?keywords=Materials%20Engineer&location=Suisse%20romande&f_TPR=r604800" target="_blank" class="btn">LinkedIn (Derniers 7j)</a>
-      </div>
+      <h3>Jobup Romandie</h3>
+      <p>Filtre : Ingénieur Matériaux / R&D sur GE, VD, NE, FR, JU, BE.</p>
+      <a href="https://www.jobup.ch/fr/emplois/?term=Ingenieur+Materiaux&regionName=Genève,Vaud,Neuchâtel,Fribourg,Jura,Berne" target="_blank" class="btn">Lancer la recherche</a>
+    </div>
+    <div class="card">
+      <h3>LinkedIn Search</h3>
+      <p>Ciblage: Sustainable / Materials Engineer / Metallurgy (Suisse Romande).</p>
+      <a href="https://www.linkedin.com/jobs/search/?keywords=Materials%20Engineer%20OR%20Sustainable%20Materials&location=Suisse%20romande&f_TPR=r604800" target="_blank" class="btn">Lancer la recherche</a>
+    </div>
+    <div class="card">
+      <h3>Microcity (Innovation)</h3>
+      <p>Pôle d'innovation Neuchâtelois : Startups et projets R&D.</p>
+      <a href="https://www.microcity.ch/offres-d-emploi" target="_blank" class="btn external">Voir les opportunités</a>
     </div>
   </div>
 
-  <!-- GROUPES HORLOGERS -->
-  <div class="section-title">Grandes Maisons & Groupes (Holdings)</div>
+  <!-- COMPOSITES, CÉRAMIQUES & NOUVEAUX MATÉRIAUX -->
+  <div class="section-title">Composites, Céramiques & Polymères High-Tech</div>
   <div class="grid">
-    <div class="card">
-      <span class="loc">GE / VD / NE / BE</span>
-      <h3>Swatch Group</h3>
-      <p>Omega, Longines, Tissot, ETA, Nivarox, Comadur, Rado.</p>
-      <a href="https://www.swatchgroup.com/fr/job-finder" target="_blank" class="btn">Recrutement Swatch</a>
-    </div>
-    <div class="card">
-      <span class="loc">GE / VD / NE</span>
-      <h3>Richemont</h3>
-      <p>Cartier, IWC, Jaeger-LeCoultre, Panerai, Piaget, Vacheron.</p>
-      <a href="https://careers.richemont.com/fr-fr/search-and-apply/" target="_blank" class="btn">Recrutement Richemont</a>
-    </div>
-    <div class="card">
-      <span class="loc">GE / VD / NE</span>
-      <h3>LVMH Watch & Jewelry</h3>
-      <p>Hublot, Zenith, TAG Heuer, Bulgari.</p>
-      <a href="https://www.lvmh.com/fr/talents/nous-rejoindre/nos-offres" target="_blank" class="btn">Recrutement LVMH</a>
-    </div>
-    <div class="card">
-      <span class="loc">GE / NE / VD</span>
-      <h3>Citizen Group</h3>
-      <p>Frédérique Constant, Alpina, Arnold & Son, Angelus, La Joux-Perret.</p>
-      <a href="https://frederiqueconstant.com/careers/" target="_blank" class="btn">Recrutement Citizen</a>
-    </div>
-    <div class="card">
-      <span class="loc">NE / GE</span>
-      <h3>Kering Watches</h3>
-      <p>Ulysse Nardin, Girard-Perregaux, Gucci Watches.</p>
-      <a href="https://www.kering.com/fr/talents/offres-d-emploi/" target="_blank" class="btn">Recrutement Kering</a>
-    </div>
-    <div class="card">
-      <span class="loc">GE / NE</span>
-      <h3>Chanel Horlogerie</h3>
-      <p>Manufacture G&F Châtelain (NE), Romain Gauthier, Kenissi.</p>
-      <a href="https://www.chanel.com/fr/carrieres/" target="_blank" class="btn">Recrutement Chanel</a>
-    </div>
-    <div class="card">
-      <span class="loc">VD (Vallée de Joux)</span>
-      <h3>Festina (MHVJ)</h3>
-      <p>Manufacture de Haute Horlogerie et composants Soprod.</p>
-      <a href="https://festinagroup.com/en/careers/" target="_blank" class="btn">Recrutement Festina</a>
-    </div>
+    <div class="card"><span class="loc">NE / La Chaux-de-Fonds</span><h3>Lavoisier Composites</h3><p>Matériaux Carbonium® recyclés pour l'horlogerie de luxe.</p><a href="https://www.lavoisier-composites.com/contact" target="_blank" class="btn">Contact / Spontané</a></div>
+    <div class="card"><span class="loc">NE / La Chaux-de-Fonds</span><h3>Dynatec SA</h3><p>Moulage par injection technique (MIM, CIM) et frittage.</p><a href="https://dynatec.ch/carrieres/" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">NE / La Chaux-de-Fonds</span><h3>Composites Busch</h3><p>Composites carbone et pièces structurelles haute performance.</p><a href="https://www.compositesbusch.ch/fr/emplois" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">FR / Fribourg</span><h3>Bcomp</h3><p>Leader mondial des composites naturels (Lin) / F1 / Luxe.</p><a href="https://www.bcomp.ch/careers/" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">NE / Le Locle</span><h3>Ceramaret</h3><p>Céramiques techniques (Zircone, Alumine) et Saphir.</p><a href="https://www.ceramaret.ch/fr/carrieres" target="_blank" class="btn">Careers</a></div>
   </div>
 
-  <!-- INDEPENDANTS & PRESTIGES -->
-  <div class="section-title">Indépendants & Manufactures de Prestige</div>
+  <!-- TRAITEMENTS, SURFACES & LABORATOIRES -->
+  <div class="section-title">Traitement de Surfaces, PVD & Métallurgie</div>
+  <div class="grid">
+    <div class="card"><span class="loc">NE / La Chaux-de-Fonds</span><h3>Positive Coating</h3><p>Revêtements ALD et PVD innovants, science des couches minces.</p><a href="https://positivecoating.ch/carrieres/" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">NE / Marin</span><h3>Precicoat</h3><p>Traitements fonctionnels et esthétiques de pointe.</p><a href="https://precicoat.ch/fr/emplois/" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">BE / Saint-Imier</span><h3>DM Surfaces</h3><p>Galvanoplastie et décors techniques.</p><a href="https://www.linkedin.com/company/dm-surfaces-sa/jobs/" target="_blank" class="btn external">Jobs LinkedIn</a></div>
+    <div class="card"><span class="loc">NE / La Chaux-de-Fonds</span><h3>PX Group</h3><p>Métallurgie des poudres, alliages et Precinox.</p><a href="https://www.pxgroup.com/emplois/" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">NE / Marin</span><h3>Metalor</h3><p>Raffinage et chimie des métaux précieux.</p><a href="https://metalor.com/careers/" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">GE / Meyrin</span><h3>Metallotest</h3><p>Laboratoire de contrôle, corrosion et expertise matériaux.</p><a href="https://www.metallotest.ch/emplois" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">JU / Bassecourt</span><h3>Detech</h3><p>Nettoyage industriel et passivation (Médical/Horloger).</p><a href="https://detech.ch/emplois/" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">NE / Marin</span><h3>Coloral</h3><p>Anodisation de l'aluminium et traitements de surfaces.</p><a href="https://www.coloral.ch/fr/carrieres" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">NE / La Chaux-de-Fonds</span><h3>Surcotec</h3><p>Revêtements sous vide PVD/DLC.</p><a href="http://www.surcotec.ch/index.php/fr/emplois" target="_blank" class="btn">Careers</a></div>
+  </div>
+
+  <!-- GROUPES HORLOGERS (CONSOLIDÉS) -->
+  <div class="section-title">Grands Groupes & Manufactures (Pôles R&D)</div>
+  <div class="grid">
+    <div class="card"><span class="loc">Multi-Sites Romandie</span><h3>Swatch Group</h3><p>Omega, ETA, Nivarox, Comadur (Céramique), EM Microelectronic.</p><a href="https://www.swatchgroup.com/fr/job-finder" target="_blank" class="btn">Accès Job Finder</a></div>
+    <div class="card"><span class="loc">GE / VD / NE</span><h3>Richemont</h3><p>Cartier, Panerai, Jaeger-LeCoultre, Pôles Innovation.</p><a href="https://careers.richemont.com/fr-fr/search-and-apply/" target="_blank" class="btn">Accès Portail</a></div>
+    <div class="card"><span class="loc">GE / VD / NE</span><h3>LVMH Horlogerie</h3><p>Hublot (Matériaux), Zenith, TAG Heuer.</p><a href="https://www.lvmh.com/fr/talents/nous-rejoindre/nos-offres" target="_blank" class="btn">Accès Portail</a></div>
+    <div class="card"><span class="loc">Arc Jurassien</span><h3>Acrotec Group</h3><p>Vaucher, Mimotec (LIGA), Pierhor. Plus de 30 PME techniques.</p><a href="https://acrotec.ch/carrieres/" target="_blank" class="btn">Voir les Jobs</a></div>
+    <div class="card"><span class="loc">GE / NE / VD</span><h3>Citizen Group</h3><p>Frédérique Constant, Alpina, Arnold & Son, Angelus.</p><a href="https://frederiqueconstant.com/careers/" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">GE / NE</span><h3>Chanel Horlogerie</h3><p>Manufacture G&F Châtelain (NE), Kenissi.</p><a href="https://www.chanel.com/fr/carrieres/" target="_blank" class="btn">Careers</a></div>
+  </div>
+
+  <!-- INDÉPENDANTS & HAUTE HORLOGERIE -->
+  <div class="section-title">Indépendants & Ateliers de Prestige</div>
   <div class="grid">
     <div class="card"><span class="loc">GE / NE / BE</span><h3>Rolex</h3><a href="https://www.carrieres-rolex.com/" target="_blank" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">GE (Plan-les-Ouates)</span><h3>Patek Philippe</h3><a href="https://careers.patek.com/" target="_blank" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">VD / GE</span><h3>Audemars Piguet</h3><a href="https://careers.audemarspiguet.com/" target="_blank" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">JU (Les Breuleux)</span><h3>Richard Mille</h3><a href="https://www.richardmille.com/fr/careers" target="_blank" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">GE (Meyrin)</span><h3>Chopard</h3><a href="https://www.chopard.com/fr-fr/careers.html" target="_blank" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">GE / Bienne</span><h3>Raymond Weil / Norqain</h3><a href="https://www.raymond-weil.com/fr/jobs/" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">GE / Plan-les-Ouates</span><h3>Patek Philippe</h3><a href="https://careers.patek.com/" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">VD / Le Brassus</span><h3>Audemars Piguet</h3><a href="https://careers.audemarspiguet.com/" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">NE / La Chaux-de-Fonds</span><h3>Schwarz Etienne</h3><p>Manufacture intégrée, composants mécaniques complexes.</p><a href="https://www.schwarz-etienne.ch/fr/manufacture" target="_blank" class="btn external">Spontané</a></div>
+    <div class="card"><span class="loc">GE / Collonge-Bellerive</span><h3>Beauregard</h3><p>Manufacture indépendante focalisée sur l'art des composants.</p><a href="https://www.beauregard.ch/" target="_blank" class="btn external">Contact</a></div>
+    <div class="card"><span class="loc">JU / Les Breuleux</span><h3>Richard Mille</h3><a href="https://www.richardmille.com/fr/careers" target="_blank" class="btn">Careers</a></div>
   </div>
 
-  <!-- PRESTATAIRES TECHNIQUES -->
-  <div class="section-title">Habillage, Traitements & Surfaces (Cœur Matériaux)</div>
+  <!-- SERVICES & OUTILLAGE INDUSTRIEL -->
+  <div class="section-title">Outillage, Nettoyage & Process</div>
   <div class="grid">
-    <div class="card"><span class="loc">NE / La Chaux-de-Fonds</span><h3>PX Group</h3><p>PX Precinox : Alliages complexes et raffinage.</p><a href="https://www.pxgroup.com/emplois/" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">BE / Saint-Imier</span><h3>DM Surfaces</h3><p>Galvanoplastie et décors (Contact LinkedIn/Email).</p><a href="https://www.linkedin.com/company/dm-surfaces-sa/jobs/" class="btn">Voir sur LinkedIn</a></div>
-    <div class="card"><span class="loc">NE / La Chaux-de-Fonds</span><h3>Positive Coating</h3><p>Traitements PVD / ALD innovants.</p><a href="https://positivecoating.ch/carrieres/" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">NE / Marin</span><h3>Precicoat</h3><p>Surfaces fonctionnelles et esthétiques.</p><a href="https://precicoat.ch/fr/emplois/" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">JU / NE / VD</span><h3>STS (Surfaces)</h3><p>Leader du traitement électrolytique.</p><a href="https://www.sts-group.ch/fr/emplois" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">NE / Le Locle</span><h3>Ceramaret</h3><p>Céramiques techniques et saphir.</p><a href="https://www.ceramaret.ch/fr/carrieres" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">NE / La Chaux-de-Fonds</span><h3>Lavoisier Composites</h3><p>Composites carbone éco-conçus.</p><a href="https://www.lavoisier-composites.com/contact" class="btn">Spontané</a></div>
-    <div class="card"><span class="loc">AR / Teufen</span><h3>RC Tritec</h3><p>Chimie LumiNova (Postes spécialisés).</p><a href="https://rctritec.com/fr/jobs" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">NE / Marin</span><h3>Metalor</h3><p>Métaux précieux et chimie fine.</p><a href="https://metalor.com/careers/" class="btn">Careers</a></div>
-  </div>
-
-  <!-- INDUSTRIE & R&D -->
-  <div class="section-title">Industrie, Packaging & CleanTech</div>
-  <div class="grid">
-    <div class="card"><span class="loc">VD (Mex)</span><h3>Bobst Group</h3><a href="https://www.bobst.com/fr/carrieres/" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">VD (Lausanne)</span><h3>Nestlé R&D</h3><span class="tag">Packaging Durable</span><a href="https://jobdetails.nestle.com/" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">FR (Fribourg)</span><h3>Bcomp</h3><span class="tag">Composites Naturels</span><a href="https://www.bcomp.ch/careers/" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">VS (Monthey)</span><h3>Huntsman</h3><span class="tag">Polymères</span><a href="https://huntsman.wd1.myworkdayjobs.com/" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">NE (Villeret)</span><h3>Straumann</h3><span class="tag">Biomatériaux</span><a href="https://careers.straumann.com/" class="btn">Careers</a></div>
-    <div class="card"><span class="loc">NE (Boudry)</span><h3>Precitrame</h3><span class="tag">Machines</span><a href="https://www.precitrame.com/fr/jobs" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">NE / Boudry</span><h3>Precitrame Machines</h3><p>Transferts circulaires et polissage de haute précision.</p><a href="https://www.precitrame.com/fr/jobs" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">VD / Paudex</span><h3>Borer Chemie</h3><p>Science du nettoyage industriel et médical.</p><a href="https://www.borer.ch/fr/carrieres/" target="_blank" class="btn">Careers</a></div>
+    <div class="card"><span class="loc">JU / Courrendlin</span><h3>Abatech</h3><p>Composants habillage et mécanique de précision.</p><a href="https://www.abatech.ch/" target="_blank" class="btn external">Contact</a></div>
+    <div class="card"><span class="loc">NE / La Chaux-de-Fonds</span><h3>Bijoutil</h3><p>Fournisseur d'outillage et matériaux de bijouterie.</p><a href="https://www.bijoutil.ch/fr/emplois" target="_blank" class="btn">Jobs</a></div>
+    <div class="card"><span class="loc">NE / La Chaux-de-Fonds</span><h3>NGL Cleaning</h3><p>Chimie des formulations pour le nettoyage de surfaces.</p><a href="https://www.ngl-cleaning-technology.com/fr/carrieres" target="_blank" class="btn">Careers</a></div>
   </div>
 
 </div>
